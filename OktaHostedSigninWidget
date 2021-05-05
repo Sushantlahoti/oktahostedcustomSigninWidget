@@ -1,0 +1,1652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="none" />
+    <link
+      rel="icon"
+      href="https://account.churchofjesuschrist.org/static/images/favicon-lds-1.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="https://account.churchofjesuschrist.org/static/css/platform5.css"
+    />
+    <link
+      href="https://www.churchofjesuschrist.org/services/platform/v3/assets/main.d2070829.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {{{SignInWidgetResources}}}
+    <style>
+      @font-face {
+        font-family: "Zoram";
+        font-style: normal;
+        src: url("https://foundry.churchofjesuschrist.org/Foundry/v1/Zoram:Sans:300/f00.woff")
+          format("woff");
+      }
+ 
+      body {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+      }
+ 
+      p {
+        font-size: 14px !important;
+        color: #53575b;
+      }
+ 
+      a:not(.button):not(.pf-footer a) {
+        color: #167b9c !important;
+      }
+ 
+      .dRiLvV {
+        text-align: inherit;
+       background: 0px center;
+        border-width: 0px;
+        border-style: initial;
+        border-color: initial;
+        border-image: initial;
+        padding: 0px;
+      }
+ 
+      .button {
+        width: 100% !important;
+      }
+ 
+      .button-primary {
+        border: none !important;
+        box-shadow: none !important;
+        background: linear-gradient(
+            171.63deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 83.33%
+          ),
+          #006184 !important;
+        border-radius: 2px !important;
+        font-family: Zoram, ldslat, Open Sans, noto sans, Helvetica, Arial,
+          system-ui, -apple-system !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 16px !important;
+        line-height: 26px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        padding: 8px 0px !important;
+      }
+ 
+      .button-primary:hover {
+        background-color: #006184 !important;
+        background: #006184 !important;
+        background-image: none !important;
+      }
+ 
+      #okta-sign-in.auth-container.main-container .margin-top-30 {
+        margin-top: 0px !important;
+      }
+ 
+      #okta-sign-in.auth-container h2 {
+        font-weight: bold;
+        color: #0d0f10;
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+ 
+      #okta-sign-in h3 {
+        font-size: 16px;
+        color: #0d0f10 !important;
+      }
+ 
+      #okta-sign-in .primary-auth-form .o-form-content .okta-form-title {
+        height: 39px;
+        left: calc(50% - 96px / 2);
+        top: 44px;
+        font-family: Zoram, Open Sans, noto sans, Helvetica, Arial, system-ui,
+          -apple-system !important;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        color: #0d0f10;
+        margin-top: 38px;
+        margin-bottom: 40px;
+      }
+ 
+      #okta-sign-in {
+        overflow: visible;
+        margin: 0px auto 8px;
+        top: 0px;
+        width: 426px;
+      }
+ 
+      #okta-sign-in.auth-container .o-form-explain {
+        color: #212225;
+      }
+ 
+      #okta-sign-in .auth-header {
+        padding: 0px 0px 110px;
+      }
+ 
+      #okta-sign-in .o-form label {
+        color: #53575b;
+        font-size: 14px;
+      }
+ 
+      #okta-sign-in .o-form-head {
+        font-size: 16px;
+        margin-top: 12px;
+        font-weight: 700;
+      }
+ 
+      #okta-sign-in .o-form .input-fix input,
+      #okta-sign-in .o-form .textarea-fix input {
+        font-size: 16px;
+      }
+ 
+      #okta-sign-in.auth-container .link,
+      #okta-sign-in.auth-container .link:active,
+      #okta-sign-in.auth-container .link:hover,
+      #okta-sign-in.auth-container .link:link,
+      #okta-sign-in.auth-container .link:visited {
+        color: #167b9c;
+      }
+ 
+      #okta-sign-in .auth-footer {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+ 
+      #okta-sign-in .o-form-label {
+        padding: 0px 0px 0px 0;
+      }
+ 
+      #okta-sign-in .form-divider {
+        margin: 32px 0px;
+        padding: 0px;
+        color: #bdc0c0;
+      }
+ 
+      .pf-footer * {
+        font-size: 13px;
+        color: #212225;
+      }
+ 
+      .pf-footer__legal {
+        padding-top: 5px;
+      }
+ 
+      .pf-footer__legal a,
+      .pf-footer__legal a:hover,
+      .pf-footer__legal a:visited {
+        color: #212225;
+        padding-right: 5px;
+      }
+ 
+      .pf-footer__cells {
+        margin: 9px auto -7px;
+      }
+ 
+      #okta-sign-in .focused-input,
+      #okta-sign-in .link.help:focus {
+        box-shadow: 0 0 0px #51cbee;
+      }
+ 
+      #okta-sign-in.auth-container .okta-sign-in-header {
+        border-bottom-color: #bdc0c0;
+      }
+ 
+      #okta-sign-in .registration-container .content-container {
+        font-size: 16px;
+        color: #0d0f10;
+        padding: 5px 5px;
+        text-align: center;
+        border-top: 1px solid #bdc0c0;
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+ 
+      #okta-sign-in .registration-container .registration-link {
+        margin-left: 10px;
+        color: #167b9c;
+      }
+ 
+      #okta-sign-in.auth-container.main-container {
+        border-color: #e0e2e2 !important;
+        border-radius: 2px !important;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) !important;
+      }
+ 
+      #okta-sign-in.auth-container .okta-sign-in-header {
+        border-bottom-color: #bdc0c0 !important;
+      }
+ 
+      #okta-sign-in .auth-beacon-border {
+        border: 1px solid #bdc0c0 !important;
+      }
+ 
+      #okta-sign-in .auth-content {
+        padding: 60px 48px 0px;
+      }
+ 
+      #okta-sign-in .enroll-choices,
+      #okta-sign-in .no-beacon .auth-content {
+        padding-top: 0px;
+      }
+ 
+      #okta-sign-in.auth-container .button.button-primary.link-button-disabled {
+        color: #fff;
+        background-color: #63b1d7;
+        border-color: #63b1d7;
+        background-image: none;
+        box-shadow: none;
+        background: linear-gradient(
+            176.42deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 83.33%
+          ),
+          #006184;
+      }
+ 
+      #okta-sign-in.auth-container .okta-form-input-field {
+        background-color: #fff;
+        border-color: #a9adad;
+      }
+ 
+      #okta-sign-in .o-form .input-fix,
+      #okta-sign-in .o-form .textarea-fix {
+        border-radius: 2px;
+      }
+ 
+      #okta-sign-in.auth-container .okta-form-input-field input {
+        color: #0d0f10;
+      }
+ 
+      #okta-sign-in.auth-container .button-primary:active,
+      #okta-sign-in.auth-container .button-primary:focus,
+      #okta-sign-in.auth-container .button-primary:hover {
+        background: linear-gradient(
+            150deg,
+            hsla(0, 0%, 100%, 0.3),
+            hsla(0, 0%, 100%, 0)
+          ),
+          #006184;
+      }
+ 
+      #okta-sign-in .button.link-button {
+        background: linear-gradient(
+            160.3deg,
+            rgba(255, 255, 255, 0) 12.7%,
+            rgba(0, 97, 132, 0.2) 106.8%
+          ),
+          #ffffff;
+        border: 1px solid #006184;
+        box-sizing: border-box;
+        border-radius: 2px;
+        font-size: 14px;
+        text-align: center;
+        color: #006184;
+        margin: 0px;
+      }
+ 
+      #okta-sign-in .button.link-button:hover {
+        background: none;
+      }
+ 
+      #okta-sign-in .o-form-button-bar .button {
+        height: 40px;
+      }
+ 
+      #okta-sign-in.auth-container
+        .button.link-button-disabled:not(.inline-totp-verify) {
+        color: #878a8c !important;
+        background: #eff0f0 !important;
+        border-color: #878a8c;
+      }
+ 
+      #okta-sign-in.auth-container .okta-form-label {
+        margin-left: 8px;
+        margin-bottom: 2px;
+        margin-top: 0px;
+        height: 20px;
+      }
+ 
+      #okta-sign-in .o-form .custom-checkbox label {
+       font-size: 14px;
+        color: #212225;
+        margin: -4px 0px 14px;
+      }
+ 
+      #okta-sign-in .scan-instructions .scan-instructions-qrcode-wrapper {
+        float: none !important;
+        text-align: center;
+        color: #0d0f10;
+        margin-bottom: 16px;
+      }
+ 
+      #okta-sign-in .scan-instructions .scan-instructions-details {
+        padding-right: 0px !important;
+      }
+ 
+      #okta-sign-in .scan-instructions .scan-instructions-details-wrapper {
+        width: 100%;
+        margin-right: 0px !important;
+        float: left;
+      }
+ 
+      #okta-sign-in .enroll-webauthn-form .o-form-fieldset-container p {
+        text-align: left;
+      }
+ 
+      #okta-sign-in .button .link-button {
+        background: linear-gradient(
+            160.3deg,
+            rgba(255, 255, 255, 0) 12.7%,
+            rgba(0, 97, 132, 0.2) 106.8%
+          ),
+          #ffffff !important;
+        border: 1px solid #006184 !important;
+        box-sizing: border-box !important;
+        border-radius: 2px !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        color: #006184 !important;
+      }
+ 
+      #okta-sign-in .button .link-button:hover {
+        background: none !important;
+      }
+ 
+      #okta-sign-in .auth-org-logo {
+        display: none !important;
+      }
+ 
+      #okta-sign-in .o-form-theme {
+        padding: 0px;
+      }
+ 
+      * {
+        font-size: 100%;
+        font-family: Zoram !important;
+      }
+ 
+      #okta-sign-in .help-wrap .infobox.infobox-error::before,
+      #okta-sign-in .infobox-error::before,
+      #okta-sign-in .infobox.infobox-subtle.infobox-error::before {
+        background-color: #e63939;
+        width: 8px;
+      }
+ 
+      #okta-sign-in .error-16::before {
+        content: "\e055";
+        color: #e63939;
+        left: 0px;
+      }
+ 
+      #okta-sign-in .warning-16::before {
+        font-size: 22px;
+      }
+ 
+      #okta-sign-in .infobox {
+        font-size: 14px;
+        color: #000000;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+ 
+      #okta-sign-in .infobox > .icon {
+        left: 22px;
+      }
+ 
+      #okta-sign-in .help-wrap .infobox.infobox-warning::before,
+      #okta-sign-in .infobox-warning::before,
+      #okta-sign-in .infobox.infobox-subtle.infobox-warning::before {
+        background-color: #ffae0c;
+        width: 8px;
+      }
+ 
+      #okta-sign-in .warning-16::before {
+        content: "\e058";
+        color: #ffae0c;
+        left: 0px;
+      }
+ 
+      .apploginbanner-container {
+        visibility: hidden;
+      }
+ 
+      #subheaderImg {
+        display: none;
+      }
+ 
+      .cust-sub-header {
+        font-family: Zoram;
+        font-size: 13px;
+       text-align: right;
+        color: #000;
+        position: absolute;
+        top: -22px;
+        right: 0px;
+      }
+ 
+      .cust-sub-header-span {
+        font-size: 16px;
+        position: absolute;
+        top: 67.33px;
+        right: 26.7px;
+      }
+ 
+      .cust-sub-header-lang {
+        list-style-type: none;
+        text-align: left;
+        position: absolute;
+        right: 26.7px;
+        top: 90px;
+        height: 25em;
+        display: none;
+        z-index: 10;
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+      }
+ 
+      .cust-sub-header-langheader {
+        color: #333031;
+        font-family: Zoram;
+        font-size: 13px;
+        position: absolute;
+        top: 69.5px;
+        right: 47px;
+        line-height: 13px;
+      }
+ 
+      .mainheader {
+        position: relative;
+        margin-bottom: 64px;
+      }
+ 
+      .cMGhxp {
+        cursor: pointer;
+        padding: 6px 25px 6px 20px !important;
+        background: rgb(255, 255, 255);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(238, 238, 238);
+        border-image: initial;
+        text-decoration: none;
+      }
+ 
+      #okta-sign-in.auth-container {
+        margin-top: 60px;
+      }
+ 
+      #okta-sign-in .auth-header {
+        z-index: 1;
+      }
+ 
+      .instructions-title {
+        font-size: 16px !important;
+        color: #0d0f10;
+      }
+ 
+      .instructions {
+        font-size: 14px;
+        color: #0d0f10;
+      }
+ 
+      .instructions a {
+        color: #167b9c;
+      }
+ 
+      #okta-sign-in .app-download-instructions {
+       margin-bottom: 32px;
+      }
+ 
+      #okta-sign-in .scan-instructions .scan-instructions-details {
+        padding-right: 0px !important;
+        font-size: 14px;
+        color: #0d0f10 !important;
+        margin: 16px 0px 32px;
+      }
+ 
+      #okta-sign-in .scan-instructions .scan-instructions-details p {
+        color: #0d0f10 !important;
+      }
+ 
+      #okta-sign-in .scan-instructions .qrcode-wrap {
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+ 
+      #okta-sign-in.auth-container .link {
+        font-size: 14px;
+      }
+ 
+      .mfa-verify span .custom-checkbox {
+        position: relative;
+        top: 25px;
+        max-width: 250px;
+      }
+ 
+      #okta-sign-in .custom-checkbox label {
+        font-size: 14px;
+        color: #212225;
+      }
+ 
+      #okta-sign-in .o-form-fieldset a {
+        margin-top: 22px;
+      }
+ 
+      .link-button-disabled {
+        border: none !important;
+      }
+ 
+      #language-selection {
+        position: absolute;
+        top: -22px;
+        width: 100%;
+        right: 10px;
+      }
+ 
+      #okta-sign-in .error-16::before {
+        left: -3px;
+        font-size: 24px;
+      }
+ 
+      #okta-sign-in .enroll-factor-row .enroll-factor-button .button {
+        min-width: 80px;
+        text-align: center;
+        height: 32px;
+        padding: 0px 16px;
+      }
+ 
+      #okta-sign-in .button.link-button:hover {
+        border-color: #006184;
+      }
+ 
+      .list-title {
+        font-size: 14px !important;
+        color: #53575b;
+      }
+ 
+      #okta-sign-in .success-16-green:before {
+        content: "\e051";
+        color: #74bb49;
+        font-size: 26px !important;
+        left: -5px;
+      }
+ 
+      #okta-sign-in.auth-container .chzn-single span,
+      .chzn-container .chzn-results,
+      .chzn-search input {
+        font-size: 14px !important;
+        color: #212225 !important;
+      }
+ 
+      .chzn-container-single .chzn-drop,
+      .chzn-container-active.chzn-with-drop .chzn-single,
+      .chzn-container-single .chzn-search input {
+        border-color: #e0e2e2 !important;
+      }
+ 
+      #okta-sign-in .chzn-container-single .chzn-single {
+        height: 40px;
+      }
+ 
+      #okta-sign-in.auth-container .okta-form-input-field {
+        background-color: #fff;
+        height: 40px;
+        font-size: 16px;
+      }
+ 
+      #okta-sign-in .o-form-input-group {
+        height: 40px;
+      }
+ 
+      #okta-sign-in .o-form-input-group :first-child {
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+      }
+ 
+      #okta-sign-in .o-form-input-group :last-child {
+        border-radius: 0px 2px 2px 0px;
+        border-right-width: 1px;
+      }
+ 
+      #okta-sign-in .o-form-label-inline {
+        background-color: #f7f8f8;
+        color: #a9adad;
+        border: 1px solid #a9adad !important;
+        border-right: none !important;
+      }
+ 
+      #okta-sign-in.auth-container .o-form-explain.okta-form-input-error {
+        font-size: 14px !important;
+        color: #b00504;
+      }
+ 
+      #okta-sign-in .error-16-small:before {
+        color: #e63939;
+        font-size: 24px;
+      }
+ 
+      #okta-sign-in.auth-container .o-form-explain.okta-form-input-error {
+        padding-left: 27px;
+        width: 100%;
+      }
+ 
+      #okta-sign-in .enroll-sms .enroll-sms-phone {
+        margin-bottom: 32px;
+      }
+ 
+      #okta-sign-in.auth-container .okta-form-divider {
+        border-bottom-color: #bdc0c0;
+      }
+ 
+      /* Secondary Button */
+      #okta-sign-in #form9 .button.sms-request-button.link-button,
+      #okta-sign-in
+        #form10
+        .button.sms-request-button.link-button:not:first-child {
+        font-size: 16px;
+        float: left;
+        margin: 0px;
+        min-width: 60px;
+        width: auto;
+        background: linear-gradient(
+            160.3deg,
+            rgba(255, 255, 255, 0) 12.7%,
+            rgba(0, 97, 132, 0.2) 106.8%
+          ),
+          #ffffff !important;
+        border: 1px solid #006184;
+        box-sizing: border-box;
+        border-radius: 2px !important;
+        text-align: center;
+        color: #006184 !important;
+       padding: 0px 16px;
+      }
+ 
+      #okta-sign-in .mfa-verify .button.sms-request-button.link-button {
+        margin: 2px 0px 32px;
+      }
+ 
+      #okta-sign-in #form10 .button.sms-request-button.link-button {
+        position: relative;
+        top: -11px;
+        margin-bottom: 16px;
+      }
+ 
+      #okta-sign-in .o-form-has-errors .infobox-error {
+        margin-bottom: 32px;
+      }
+ 
+      #okta-sign-in .o-form-label-top .o-form-input {
+        max-height: 67px;
+        width: 330px;
+      }
+ 
+      #okta-sign-in .mfa-verify-password .o-form-fieldset:last-child {
+        margin-bottom: 18px;
+      }
+ 
+      #okta-sign-in .verify-webauthn-form .o-form-fieldset-container p {
+        text-align: left;
+      }
+ 
+      .enroll-sms .o-form-fieldset-container {
+        flex-direction: column;
+      }
+ 
+      #okta-sign-in .mfa-verify-passcode .auth-passcode {
+        width: 330px;
+      }
+ 
+      #okta-sign-in .visibility-16:before,
+      #okta-sign-in .visibility-off-16:before {
+        color: #000000;
+        font-size: 20px;
+        margin-top: -3px;
+     }
+ 
+      #form12 .clearfix:after {
+        display: inline;
+      }
+ 
+      #form12 input {
+        margin: 16px 0px 2px;
+      }
+ 
+      .mfa-verify .okta-form-infobox-warning {
+        margin: 16px 0px 32px !important;
+      }
+ 
+      .mfa-verify-totp-inline
+        .button.inline-totp-verify.margin-top-30.link-button {
+        border: none !important;
+        box-shadow: none !important;
+        background: linear-gradient(
+            171.63deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 83.33%
+          ),
+          #006184 !important;
+        border-radius: 2px !important;
+        font-family: Zoram, ldslat, Open Sans, noto sans, Helvetica, Arial,
+          system-ui, -apple-system !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 16px !important;
+        line-height: 26px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        padding: 8px 0px !important;
+      }
+ 
+      mfa-verify-totp-inline
+        .button.inline-totp-verify.margin-top-30.link-button:hover {
+        background-color: #006184 !important;
+        background: #006184 !important;
+        background-image: none !important;
+      }
+ 
+      #okta-sign-in .device-type-input .o-form-input > span {
+        display: flex;
+        margin-top: 32px;
+        justify-content: center;
+      }
+ 
+      .o-form-input-name-sharedSecret {
+        all: unset !important;
+      }
+ 
+      #manual-secret-code {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0px 2px !important;
+        font-size: 16px !important;
+        color: #0d0f10;
+      }
+ 
+      #okta-sign-in .button.js-enroll-phone.sms-request-button.link-button {
+        margin-bottom: 24px;
+      }
+ 
+      #okta-sign-in .o-form-error-container {
+        margin-top: 32px;
+      }
+ 
+      #okta-sign-in .o-form-wide .chzn-container {
+        width: 330px !important;
+      }
+ 
+      #okta-sign-in .o-form-input-name-phoneNumber .okta-form-input-field {
+        width: 290px !important;
+      }
+ 
+      #okta-sign-in .enroll-factor-list .enroll-factor-button a {
+        width: auto !important;
+      }
+ 
+      #okta-sign-in .infobox:before {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-radius: 2px;
+      }
+ 
+      #okta-sign-in .infobox {
+        border-radius: 2px;
+      }
+ 
+      #okta-sign-in .bg-helper {
+        box-shadow: none !important;
+        background-color: #ffffff !important;
+      }
+ 
+      #okta-sign-in .dropdown.more-actions.float-l {
+        border-right: 10px solid #ffffff !important;
+        margin-right: -15px;
+      }
+ 
+      @media only screen and (max-width: 600px) {
+        #okta-sign-in.auth-container.main-container {
+          box-shadow: none !important;
+        }
+      }
+ 
+      @media only screen and (max-device-width: 480px) {
+        #language-selection {
+          position: relative;
+          top: -6px;
+          width: 100%;
+          right: 0px;
+          z-index: 1000;
+        }
+ 
+        .mainheader {
+          position: relative;
+          margin-bottom: 0px;
+        }
+ 
+        #okta-sign-in .auth-content {
+          padding: 60px 0px 0px;
+        }
+ 
+        #okta-sign-in .okta-form-input-field {
+          width: 315px !important;
+        }
+ 
+        #okta-sign-in .enroll-factor-row .enroll-factor-button .button {
+          min-width: 80px;
+          margin-top: 0px;
+          width: auto !important;
+        }
+ 
+        #subheaderImg {
+          display: block;
+          z-index: 10;
+          position: relative;
+          top: -5px;
+        }
+ 
+        header {
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+          font-family: Zoram;
+          font-size: 13px;
+          text-align: right;
+          color: #000;
+          right: 0px;
+          width: 100%;
+          height: 40px;
+        }
+ 
+        .cust-sub-header-span {
+          font-size: 16px;
+          position: absolute;
+          top: 12px;
+          right: 27px;
+        }
+ 
+        .cust-sub-header-lang {
+          list-style-type: none;
+          text-align: left;
+          position: absolute;
+          right: 0px;
+          top: 35px;
+          height: 25em;
+          display: none;
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          overflow: auto;
+        }
+ 
+        .cust-sub-header-langheader {
+          color: #333031;
+          font-family: Zoram;
+          position: absolute;
+          top: 16px;
+          right: 48px;
+          line-height: 13px;
+       }
+ 
+        #okta-sign-in .o-form-disabled,
+        #okta-sign-in .o-form-saving .o-form-input > :not(.o-form-disabled) {
+          opacity: 1;
+          pointer-events: auto;
+          display: block;
+        }
+ 
+        #okta-sign-in.auth-container {
+          margin-top: -50px;
+        }
+ 
+        #okta-sign-in .auth-content .auth-content-inner {
+          position: relative;
+          top: 50px;
+        }
+ 
+        #okta-sign-in.auth-container.main-container {
+          border: none;
+          box-shadow: none;
+        }
+ 
+        #okta-sign-in .o-form-wide .chzn-container {
+          width: 315px !important;
+        }
+ 
+        #okta-sign-in .o-form-input-name-phoneNumber .okta-form-input-field {
+          width: 275px !important;
+        }
+      }
+    </style>
+    <title>The Church of Jesus Christ of Latter-day Saints</title>
+  </head>
+ 
+  <body style="margin: 0px;">
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: -6px;
+        min-height: 107px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+        padding-bottom: 6px;
+      "
+    >
+      <a
+        href="https://www.churchofjesuschrist.org/?lang=eng"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <img
+          id="headerLogo"
+          src="https://www.churchofjesuschrist.org/services/platform/v3/resources/static/logo/eng.svg"
+          alt="The Church of Jesus Christ of Latter-day Saints"
+          style="margin-top: 20px;"
+          height="80px"
+      /></a>
+    </div>
+    <div id="language-selection" data-breadcrumbs="false">
+      <span
+        id="language-selector"
+        onclick="SelectLanguage();"
+        style="cursor: pointer;"
+       role="button"
+        tabindex="0"
+      >
+        <span id="headerSelectedLang" class="cust-sub-header-langheader"
+          >English</span
+        >
+        <span class="cust-sub-header-span">
+          <svg
+            style="width: 1em; height: 1em;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            role="presentation"
+          >
+            <path
+              fill="currentColor"
+              d="M9.496 20.124h.76a.277.277 0 0 0 .278-.278v-3.559l1.645-1.392.932-1.547a.277.277 0 0 0-.06-.353l-1.308-1.106-.899-.761-.296-.251-.083-.07-.022-.019a.28.28 0 0 0-.295-.05l-.872.369-.82.347H7.8l-.752-1.273v-.796l-.029-.125-.843-1.684V6.97l2.426-.809a.278.278 0 0 0 .108-.46l-.099-.099-.068-.068-.287-.287-.418-.418a.274.274 0 0 0-.296-.055 8.44 8.44 0 0 1 4.46-1.274c.888 0 1.745.138 2.551.391-.02.005-.042.005-.06.014l-1.745.872-.944.924a.279.279 0 0 0 0 .393l.872.872.197.081H14.615a.277.277 0 0 0 .278-.278v-.756l.71-.71h.756c.28 0 .367-.352.15-.499a8.508 8.508 0 0 1 3.431 4.184l-1.459-1.53a.28.28 0 0 0-.32-.058l-1.556.745-1.535-.027a.278.278 0 0 0-.267.185l-.842 2.387-.003.176.758 2.415.137.163 1.587.829a.28.28 0 0 0 .278-.012l1.032-.658.561.571-.012.684-.013.712-.404.755-.762.718-.085.195-.014.8a.28.28 0 0 0 .273.283l.368.006a8.487 8.487 0 0 1-8.166 1.797zM3.5 12c0-1.138.228-2.222.634-3.215.044.067.08.129.14.204a6.644 6.644 0 0 0 .562.598l.19.075h.7l.584 1.169-.679 2.297.027.22.833 1.41v1.4l.06.172 1.744 2.213.85 1.445c.005.007.013.01.018.017C5.866 18.835 3.5 15.698 3.5 12zm11.645-7.892c.432.172.843.381 1.237.618l-1.237-.618zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"
+            ></path>
+          </svg>
+        </span>
+      </span>
+      <div style="z-index: 100;">
+        <ul id="language-options" class="cust-sub-header-lang">
+          <li id="dan" langcode="da" class="sc-1quczdl-0 cMGhxp">Dansk</li>
+          <li id="deu" langcode="de" class="sc-1quczdl-0 cMGhxp">Deutsch</li>
+          <li id="ell" langcode="el" class="sc-1quczdl-0 cMGhxp">Ελληνικά</li>
+          <li id="eng" langcode="en" class="sc-1quczdl-0 cMGhxp">English</li>
+          <li id="spa" langcode="es" class="sc-1quczdl-0 cMGhxp">Español</li>
+          <li id="fra" langcode="fr" class="sc-1quczdl-0 cMGhxp">Français</li>
+          <li id="ind" langcode="id" class="sc-1quczdl-0 cMGhxp">Indonesia</li>
+          <li id="ita" langcode="it" class="sc-1quczdl-0 cMGhxp">Italiano</li>
+          <li id="hun" langcode="hu" class="sc-1quczdl-0 cMGhxp">Magyar</li>
+          <li id="msa" langcode="ms" class="sc-1quczdl-0 cMGhxp">Malay</li>
+          <li id="nld" langcode="nl-NL" class="sc-1quczdl-0 cMGhxp">
+            Nederlands
+          </li>
+          <li id="nor" langcode="nb" class="sc-1quczdl-0 cMGhxp">Norsk</li>
+          <li id="pol" langcode="pl" class="sc-1quczdl-0 cMGhxp">polski</li>
+          <li id="por" langcode="pt-BR" class="sc-1quczdl-0 cMGhxp">
+            Português
+          </li>
+          <li id="ron" langcode="ro" class="sc-1quczdl-0 cMGhxp">română</li>
+          <li id="fin" langcode="fi" class="sc-1quczdl-0 cMGhxp">suomi</li>
+          <li id="swe" langcode="sv" class="sc-1quczdl-0 cMGhxp">Svenska</li>
+          <li id="tur" langcode="tr" class="sc-1quczdl-0 cMGhxp">Türkçe</li>
+          <li id="vie" langcode="vi" class="sc-1quczdl-0 cMGhxp">Tiếng Việt</li>
+          <li id="ces" langcode="cs" class="sc-1quczdl-0 cMGhxp">Čeština</li>
+          <li id="rus" langcode="ru" class="sc-1quczdl-0 cMGhxp">Pу́сский</li>
+          <li id="ukr" langcode="uk" class="sc-1quczdl-0 cMGhxp">українська</li>
+          <li id="tha" langcode="th" class="sc-1quczdl-0 cMGhxp">ไทย</li>
+          <li id="zho" langcode="zh-TW" class="sc-1quczdl-0 cMGhxp">中文</li>
+          <li id="jpn" langcode="ja" class="sc-1quczdl-0 cMGhxp">日本語</li>
+          <li id="zhs" langcode="zh-CN" class="sc-1quczdl-0 cMGhxp">
+            简体中文
+          </li>
+          <li id="kor" langcode="ko" class="sc-1quczdl-0 cMGhxp">한국어</li>
+        </ul>
+      </div>
+    </div>
+    <header id="subheaderImg" class="LDSORG" style="opacity: 1;">
+      <div id="PFnavContainer" data-breadcrumbs="false">&nbsp;</div>
+    </header>
+    <div id="okta-login-container" style="margin-top: 0px;"></div>
+    <footer class="pf-footer" role="contentinfo">
+      <div class="pf-footer__logo">
+        <a
+          href="https://www.churchofjesuschrist.org/?lang=eng"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <img
+            id="footerLogo"
+            src="https://www.churchofjesuschrist.org/services/platform/v3/resources/static/logo/eng.svg"
+            alt="The Church of Jesus Christ of Latter-day Saints"
+            height="80px"
+        /></a>
+      </div>
+      <div class="pf-footer__legal">
+        <p>
+          <a
+            href="https://www.churchofjesuschrist.org/services/platform/v3/resources/terms-of-use?lang=eng"
+            id="rights-url"
+            target="_blank"
+            rel="noreferrer noopener"
+            >Terms of Use (Updated 2018-09-01)</a
+          >
+          <a
+            href="https://www.churchofjesuschrist.org/services/platform/v3/resources/privacy-policy?lang=eng"
+            id="privacy-url"
+            target="_blank"
+            rel="noreferrer noopener"
+            >Privacy Notice (Updated 2018-09-01)</a
+          >
+          <br />
+          <span id="copyright-text"
+            >© 2020 by Intellectual Reserve, Inc. All rights reserved.</span
+          >
+        </p>
+      </div>
+    </footer>
+    <!--
+                "OktaUtil" defines a global OktaUtil object
+                that contains methods used to complete the Okta login flow.
+            -->
+    {{{OktaUtil}}}
+    <script type="text/javascript">
+      const currentYear = new Date().getFullYear();
+      const languages2 = {
+        da: {
+          language3: "dan",
+          language: "Dansk",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Meddelelse om personoplysninger (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Alle rettigheder forbeholdes.",
+        },
+        de: {
+          language3: "deu",
+          language: "Deutsch",
+          terms: "Nutzungsbedingungen (aktualisiert 2018-09-01)",
+          privacy: "Datenschutzmitteilung (aktualisiert 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Alle Rechte vorbehalten.",
+        },
+        en: {
+          language3: "eng",
+          language: "English",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Privacy Notice (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. All rights reserved.",
+        },
+        es: {
+          language3: "spa",
+          language: "Español",
+          terms: "Términos de uso (Actualizado 2018-09-01)",
+          privacy: "Aviso sobre la privacidad (Actualizado 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " por Intellectual Reserve, Inc. Todos los derechos reservados.",
+        },
+        fr: {
+          language3: "fra",
+          language: "Français",
+          terms: "Conditions d’utilisation (Actualisé 2018-09-01)",
+          privacy: "Déclaration de Confidentialité (Actualisé 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Tous droits réservés.",
+        },
+        id: {
+          language3: "ind",
+          language: "Indonesia",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Pemberitahuan Privasi (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " oleh Intellectual Reserve, Inc. Hak cipta dilindungi Undang-Undang.",
+        },
+        it: {
+          language3: "ita",
+          language: "Italiano",
+          terms: "Condizioni di utilizzo (Aggiornate 2018-09-01)",
+          privacy: "Informativa sulla privacy (Aggiornato 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. Tutti i diritti riservati.",
+        },
+        hu: {
+          language3: "hun",
+          language: "Magyar",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Adatvédelmi nyilatkozat (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc., Minden jog fenntartva.",
+        },
+        nb: {
+          language3: "nor",
+          language: "Norsk",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Personvernerklæring (Updated 2018-09-01)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve, Inc. Med enerett.",
+        },
+        nl: {
+          language3: "nld",
+          language: "Nederlands",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Privacykennisgeving (Bijgewerkt 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Alle rechten voorbehouden.",
+        },
+        pl: {
+          language3: "pol",
+         language: "polski",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Polityka prywatności (Zaktualizowano 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Wszelkie prawa zastrzeżone.",
+        },
+        pt: {
+          language3: "por",
+          language: "Português",
+          terms: "Termos de uso (Atualizados 2018-09-01)",
+          privacy: "Notificação de Privacidade (Atualizada 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Todos os direitos reservados.",
+        },
+        ro: {
+          language3: "ron",
+          language: "română",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy:
+            "Înștiințare privind confidențialitatea informațiilor (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Toate drepturile rezervate.",
+        },
+        fi: {
+          language3: "fin",
+          language: "suomi",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Tietosuojailmoitus (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Kaikki oikeudet pidätetään.",
+        },
+        sv: {
+          language3: "swe",
+          language: "Svenska",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Integritetspolicy (Uppdaterad 2018-09-01)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve, Inc. Med ensamrätt.",
+        },
+        vi: {
+          language3: "vie",
+          language: "Tiếng Việt",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Thông Báo về Quyền Riêng Tư (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " do Intellectual Reserve, Inc. Giữ mọi bản quyền.",
+        },
+        cs: {
+          language3: "ces",
+          language: "Čeština",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Sdělení o ochraně osobních údajů (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Všechna práva vyhrazena.",
+        },
+        ru: {
+          language3: "rus",
+          language: "Pу́сский",
+          terms: "Условия использования (обновлено 2018-09-01)",
+          privacy: "Заявление о конфиденциальности (обновленный 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. Все права защищены.",
+        },
+        uk: {
+          language3: "ukr",
+          language: "українська",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy:
+            "Повідомлення щодо політики захисту персональних даних (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. Усі права застережено.",
+        },
+        th: {
+          language3: "tha",
+          language: "ไทย",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "ข้อประกาศเรื่องความเป็นส่วนตวั (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " โดย Intellectual Reserve, Inc. สงวนสิทธิ์ทุกประการ",
+        },
+        zh: {
+          language3: "zho",
+          language: "中文",
+          terms: "使用條款（更新 2018-09-01）",
+          privacy: "隱私聲明 (更新 2018-09-01)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve, Inc. 版權所有",
+        },
+        ja: {
+          language3: "jpn",
+          language: "日本語",
+          terms: "利用規約（更新日 2018-09-01）",
+          privacy: "個人情報に関する通知 (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. All Rights Reserved.",
+        },
+        ko: {
+          language3: "kor",
+          language: "한국어",
+          terms: "이용 약관(업데이트 날짜 2018-09-01)",
+          privacy: "개인 정보 보호 알림 (업데이트 됨 2018-09-01)",
+          copyright:
+            "© " + currentYear + " by Intellectual Reserve, Inc. 판권 소유.",
+        },
+        zhs: {
+          language3: "zhs",
+          language: "简体中文",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "隐私声明 (更新 2018-09-01)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve,Inc.版权所有。",
+        },
+        el: {
+          language3: "ell",
+          language: "Ελληνικά",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Γνωστοποίηση περί απορρήτου (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " υπό Intellectual Reserve, Inc. Διατηρούνται όλα τα δικαιώματα.",
+        },
+        ms: {
+          language3: "msa",
+          language: "Malay",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Pemberitahuan Privasi (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. All rights reserved.",
+        },
+        tr: {
+          language3: "tur",
+          language: "Türkçe",
+          terms: "Terms of Use (Updated 2018-09-01)",
+          privacy: "Gizlilik Bildirimi (Updated 2018-09-01)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Her hakkı saklıdır.",
+        },
+      };
+ 
+      // Detect browser language and reset elements on the page.
+      let browserLanguage =
+        (window && window.navigator && window.navigator.language) || "en";
+      let language2 =
+        browserLanguage === "ru"
+          ? "ru"
+          : browserLanguage.substring(browserLanguage.indexOf("-") - 2, 2);
+      const language3 =
+        languages2[language2] && languages2[language2].language3;
+      var langCode = language2;
+      var oktaSignIn;
+ 
+      // Update elements based on language
+      document.getElementById("headerLogo").src =
+        "https://www.churchofjesuschrist.org/services/platform/v3/resources/static/logo/" +
+        language3 +
+        ".svg";
+      document.getElementById("footerLogo").src =
+        "https://www.churchofjesuschrist.org/services/platform/v3/resources/static/logo/" +
+        language3 +
+        ".svg";
+ 
+      function updateText(lang2) {
+        let textLang = "en";
+        if (lang2 === "zh-CN") {
+          textLang = "zhs";
+        } else if (lang2.indexOf("-") > 0) {
+          textLang = lang2.substring(lang2.indexOf("-") - 2, 2);
+        } else {
+          textLang = lang2;
+        }
+        document.getElementById("headerSelectedLang").innerHTML =
+          languages2[textLang] && languages2[textLang].language;
+        document.getElementById("rights-url").innerHTML =
+          languages2[textLang] && languages2[textLang].terms;
+        document.getElementById("privacy-url").innerHTML =
+          languages2[textLang] && languages2[textLang].privacy;
+        document.getElementById("copyright-text").innerHTML =
+          languages2[textLang] && languages2[textLang].copyright;
+      }
+ 
+      updateText(language2);
+ 
+      // Polyfill for IE 11
+      (function (w) {
+        w.URLSearchParams =
+          w.URLSearchParams ||
+          function (searchString) {
+            var self = this;
+            self.searchString = searchString;
+            self.get = function (name) {
+              var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
+                self.searchString
+              );
+              if (results == null) {
+                return null;
+              } else {
+                return decodeURI(results[1]) || 0;
+              }
+            };
+          };
+      })(window);
+ 
+      //capture urls for redirection
+      const actualURL = decodeURIComponent(window.location.href);
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectUrl = urlParams.get("fromURI");
+ 
+      //get signin widget default configuration
+      var config = OktaUtil.getSignInWidgetConfig();
+ 
+      //render signin widget
+      function RenderSignInWidget() {
+        config = OktaUtil.getSignInWidgetConfig();
+        //registration link redirection
+        config.registration = {
+          click: function () {
+            window.location.href =
+              "https://account.churchofjesuschrist.org/register";
+          },
+        };
+        //links help
+        config.helpLinks = {
+          help:
+            "https://account.churchofjesuschrist.org/help?lang=" +
+            language2 +
+            "",
+          forgotPassword:
+            "https://account.churchofjesuschrist.org/recovery?lang=" +
+            language2,
+        };
+        config.features.securityImage = false;
+        config.features.registration = true;
+        config.features.hideSignOutLinkInMFA = false;
+        config.language = langCode;
+      //  config.assets = null;
+
+       config.assets = {
+          baseUrl: 'https://op1static.oktacdn.com/assets/js/sdk/okta-signin-widget/3.9.1'
+        }
+ 
+        if (oktaSignIn != undefined) {
+         oktaSignIn.remove();
+       }
+        //Object.assign(config, signInWidgetConfig);
+        // Render the Okta Sign-In Widget
+        //debugger;
+        oktaSignIn = new OktaSignIn(config);
+        oktaSignIn.renderEl(
+          {
+            el: "#okta-login-container",
+          },
+          function success(res) {
+            // debugger;
+            if (res.type === "SESSION_STEP_UP") {
+              res.stepUp.finish();
+              return;
+            } else {
+              if (actualURL.includes("?fromURI")) {
+                res.session.setCookieAndRedirect(redirectUrl);
+              } else {
+                res.session.setCookieAndRedirect(
+                  "https://www.churchofjesuschrist.org"
+                );
+              }
+              //res.session.setCookieAndRedirect('https://www.churchofjesuschrist.org');
+              return;
+            }
+          },
+          function error(err) {
+            // handleError(err)
+          }
+        );
+        oktaSignIn.on("ready", function (context) {
+          //debugger;
+          //if(context.controller == 'refresh-auth-state')
+          //{
+          //if(redirectUrl.includes('login/login'))
+          //{
+          //window.location.href = redirectUrl;
+          //}
+          //}
+        });
+        //call after signin widget is rendered
+        oktaSignIn.on("afterRender", function (data) {
+          //scroll top after rendering to address designing team request/issue
+          $(window).scrollTop(0);
+ 
+          // Adjust manual Setup Google Auth Code
+          $(".o-form-input-name-sharedSecret input").replaceWith(function () {
+            return '<span id="manual-secret-code">' + this.value + "</span>";
+          });
+ 
+          //on primary authentication screen
+          if (data.controller === "primary-auth") {
+            //hide auth header
+            $(".okta-sign-in-header.auth-header").hide();
+            //display placeholder
+            $("#okta-signin-username").attr(
+              "placeholder",
+              langCode == "en"
+                ? "Username"
+                : JSON.parse(window.localStorage["osw.languages"])[langCode]
+                    .login["primaryauth.username.placeholder"]
+            );
+          } else if (data.controller === "mfa-verify") {
+            //display placeholder
+            $(".password-with-toggle").attr(
+              "placeholder",
+              langCode == "en"
+                ? "Password"
+                : JSON.parse(window.localStorage["osw.languages"])[langCode]
+                    .login["primaryauth.password.placeholder"]
+            );
+            //display auth header
+            $(".okta-sign-in-header.auth-header").show();
+ 
+            //auto click SMS
+            var sms_button = $(".sms-request-button")[0];
+            if (sms_button) {
+              sms_button.click();
+            }
+ 
+            //add help links on MFA page
+            var pwdNeedHelp = $("#pwdNeedHelp");
+            var pwdText = $(
+              ".o-form-input-name-password.o-form-control.okta-form-input-field.input-fix"
+            );
+            if (pwdText.length > 0) {
+              if (pwdNeedHelp.length == 0) {
+                $(".auth-footer .link.goto").before(
+                  '<a href="#" id="pwdNeedHelp" data-se="needhelp" aria-expanded="false" aria-controls="help-links-container" class="link help js-help" >      Need help signing in?      </a>      <ul class="help-links js-help-links" id="help-links-container" style="display: none;">        <li>        <a id= "pwdForgotPasswordNav" href="https://account.churchofjesuschrist.org/help?lang=eng" data-se="forgot-password" class="link js-forgot-password">        Forgot password?        </a>        </li>                        <li>        <a id="pwdHelpNav" href="#" data-se="help-link" class="link js-help-link" target="_blank">Help</a>        </li>      </ul>'
+                );
+ 
+                $("#pwdForgotPasswordNav").click(function (e) {
+                  var win = window.open(
+                    "https://account.churchofjesuschrist.org/recovery?lang=" +
+                      language2,
+                    "_blank"
+                  );
+                  if (win) {
+                    win.focus();
+                  } else {
+                    //Browser has blocked it
+                    alert("Please allow popups for this website");
+                  }
+                  e.preventDefault();
+                  return false;
+                });
+                $("#pwdHelpNav").click(function (e) {
+                  var win = window.open(
+                    "https://account.churchofjesuschrist.org/help?lang=" +
+                      language2,
+                    "_blank"
+                  );
+                  if (win) {
+                    win.focus();
+                  } else {
+                    //Browser has blocked it
+                    alert("Please allow popups for this website");
+                  }
+                  e.preventDefault();
+                  return false;
+                });
+                $("#pwdNeedHelp").click(function (e) {
+                  if ($("#pwdNeedHelp").attr("aria-expanded") === "false") {
+                    $("#help-links-container").show();
+                    $("#pwdNeedHelp").attr("aria-expanded", "true");
+                  } else {
+                    $("#help-links-container").hide();
+                    $("#pwdNeedHelp").attr("aria-expanded", "false");
+                  }
+                  e.preventDefault();
+                  return false;
+                });
+              }
+            }
+          } else if (data.controller === "enroll-choices") {
+            //hide description
+            $(".okta-form-subtitle.o-form-explain").hide();
+            //hide header
+            $(".okta-sign-in-header.auth-header").hide();
+            //add signout on enrollment page
+            if (document.getElementById("manuallyAddedSignOutLink") === null) {
+              $(".o-form.o-form-edit-mode").after(
+                '<div class="registration-container" id="manuallyAddedSignOutLink" style="margin-top:0px;"><div class="content-container" style="text-align:right"><a title="Sign Out" aria-label="Sign Out" class="registration-link" href="/login/signout">Sign Out</a></div></div>'
+              );
+            }
+          } else {
+            $(".okta-sign-in-header.auth-header").show();
+          }
+        });
+      } 
+ 
+      $(document).ready(function () {
+        RenderSignInWidget();
+ 
+        var allOptions = $("#language-options").children("li:not(.init)");
+        $("#language-options").on("click", ".init", function () {
+          $(this).closest("ul").children("li:not(.init)").toggle();
+        });
+ 
+        $("#language-options").on("click", "li:not(.init)", function () {
+          allOptions.removeClass("selected");
+          $(this).addClass("selected");
+          $("#language-options").children(".init").html($(this).html());
+          allOptions.toggle();
+        });
+ 
+        $("#language-options li").click(function (e) {
+          var selLangCode = $(this).attr("langcode");
+          langCode = selLangCode;
+          language2 = $(this).attr("id");
+          config.language = langCode;
+ 
+          //Set header logo and footer logo based on selected language
+          $("#headerLogo").attr(
+            "src",
+            "https://www.churchofjesuschrist.org/services/platform/v3/resources/static/logo/" +
+              $(this).attr("id") +
+              ".svg"
+          );
+          $("#footerLogo").attr(
+            "src",
+            "https://www.churchofjesuschrist.org/services/platform/v3/resources/static/logo/" +
+              $(this).attr("id") +
+              ".svg"
+          );
+          $("#rights-url").attr(
+            "href",
+            "https://www.churchofjesuschrist.org/services/platform/v3/resources/terms-of-use?lang=" +
+              language2
+          );
+          $("#privacy-url").attr(
+            "href",
+            "https://www.churchofjesuschrist.org/services/platform/v3/resources/terms-of-use?lang=" +
+              language2
+          );
+ 
+          updateText(langCode);
+ 
+          $("#headerSelectedLang").html($(this).html());
+ 
+          RenderSignInWidget();
+        });
+      });
+ 
+      //Select language dropdown
+      function SelectLanguage() {
+        $("#language-options").show();
+        var allOptions = $("#language-options").children("li:not(.init)");
+        allOptions.toggle();
+      }
+ 
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+    </script>
+  </body>
+</html>
